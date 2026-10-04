@@ -1,0 +1,8 @@
+create_clock -name CLK -period 20 [get_ports clk]
+set_input_delay  4 -clock CLK [get_ports A*]
+set_input_delay  4 -clock CLK [get_ports B*]
+set_input_delay  4 -clock CLK [get_ports mode*]
+set_input_delay  4 -clock CLK [get_ports clear]
+set_input_delay  4 -clock CLK [get_ports enable]
+set_input_delay  4 -clock CLK [get_ports rst]
+set_output_delay 4 -clock CLK [get_ports Y*]

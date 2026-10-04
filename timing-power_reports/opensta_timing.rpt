@@ -1,0 +1,161 @@
+OpenSTA 3.1.0 d1e43c6f9f Copyright (c) 2026, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Startpoint: rst (input port clocked by CLK)
+Endpoint: _4140_ (recovery check against rising-edge clock CLK)
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   4.00    4.00 v input external delay
+   0.00    4.00 v rst (in)
+   0.01    4.01 ^ _3226_/ZN (INV_X1)
+   0.00    4.01 ^ _4140_/RN (DFFR_X1)
+           4.01   data arrival time
+
+  20.00   20.00   clock CLK (rise edge)
+   0.00   20.00   clock network delay (ideal)
+   0.00   20.00   clock reconvergence pessimism
+          20.00 ^ _4140_/CK (DFFR_X1)
+   0.05   20.05   library recovery time
+          20.05   data required time
+---------------------------------------------------------
+          20.05   data required time
+          -4.01   data arrival time
+---------------------------------------------------------
+          16.04   slack (MET)
+
+
+Startpoint: mode[1] (input port clocked by CLK)
+Endpoint: _4171_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   4.00    4.00 ^ input external delay
+   0.00    4.00 ^ mode[1] (in)
+   0.07    4.07 ^ _2532_/ZN (OR2_X1)
+   0.02    4.09 v _2643_/ZN (NOR2_X1)
+   0.35    4.43 ^ _2865_/ZN (AOI221_X1)
+   0.00    4.43 v _3776_/ZN (NOR2_X1)
+   0.07    4.51 v _3780_/Z (XOR2_X1)
+   0.06    4.57 v _3867_/Z (XOR2_X1)
+   0.08    4.65 v _3876_/ZN (OR3_X1)
+   0.02    4.67 ^ _3877_/ZN (NAND2_X1)
+   0.04    4.71 ^ _3965_/ZN (XNOR2_X1)
+   0.02    4.73 v _3966_/ZN (NOR2_X1)
+   0.03    4.76 ^ _4065_/ZN (OAI21_X1)
+   0.01    4.77 v _4066_/ZN (INV_X1)
+   0.09    4.86 v _4067_/ZN (OR3_X1)
+   0.02    4.88 ^ _4094_/ZN (NAND2_X1)
+   0.06    4.94 ^ _2129_/Z (XOR2_X1)
+   0.05    4.99 ^ _2142_/ZN (XNOR2_X1)
+   0.06    5.05 ^ _2224_/Z (XOR2_X1)
+   0.03    5.08 v _2227_/ZN (XNOR2_X1)
+   0.06    5.14 v _2301_/Z (XOR2_X1)
+   0.08    5.22 v _2789_/ZN (OR3_X1)
+   0.02    5.24 ^ _2790_/ZN (NAND2_X1)
+   0.02    5.26 v _2791_/ZN (OAI21_X1)
+   0.04    5.31 ^ _2794_/ZN (AOI21_X1)
+   0.03    5.33 v _2795_/ZN (OAI21_X1)
+   0.06    5.40 v _2886_/Z (XOR2_X1)
+   0.05    5.45 ^ _2995_/ZN (XNOR2_X1)
+   0.03    5.48 v _2997_/ZN (OAI21_X1)
+   0.05    5.53 ^ _3000_/ZN (AOI21_X1)
+   0.03    5.56 v _3003_/ZN (OAI21_X1)
+   0.05    5.61 ^ _3005_/ZN (AOI21_X1)
+   0.03    5.63 v _3008_/ZN (OAI21_X1)
+   0.05    5.68 ^ _3012_/ZN (AOI21_X1)
+   0.03    5.71 v _3014_/ZN (OAI21_X1)
+   0.05    5.76 ^ _3016_/ZN (AOI21_X1)
+   0.03    5.78 v _3018_/ZN (OAI21_X1)
+   0.05    5.83 ^ _3022_/ZN (AOI21_X1)
+   0.03    5.86 v _3023_/ZN (OAI21_X1)
+   0.04    5.90 ^ _3206_/ZN (AOI21_X1)
+   0.04    5.93 ^ _3223_/ZN (AND2_X1)
+   0.01    5.94 v _3225_/ZN (OAI21_X1)
+   0.00    5.94 v _4171_/D (DFFR_X1)
+           5.94   data arrival time
+
+  20.00   20.00   clock CLK (rise edge)
+   0.00   20.00   clock network delay (ideal)
+   0.00   20.00   clock reconvergence pessimism
+          20.00 ^ _4171_/CK (DFFR_X1)
+  -0.04   19.96   library setup time
+          19.96   data required time
+---------------------------------------------------------
+          19.96   data required time
+          -5.94   data arrival time
+---------------------------------------------------------
+          14.02   slack (MET)
+
+
+Startpoint: rst (input port clocked by CLK)
+Endpoint: _4140_ (removal check against rising-edge clock CLK)
+Path Group: asynchronous
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   4.00    4.00 v input external delay
+   0.00    4.00 v rst (in)
+   0.01    4.01 ^ _3226_/ZN (INV_X1)
+   0.00    4.01 ^ _4140_/RN (DFFR_X1)
+           4.01   data arrival time
+
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _4140_/CK (DFFR_X1)
+   0.19    0.19   library removal time
+           0.19   data required time
+---------------------------------------------------------
+           0.19   data required time
+          -4.01   data arrival time
+---------------------------------------------------------
+           3.82   slack (MET)
+
+
+Startpoint: _4149_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: _4149_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ _4149_/CK (DFFR_X1)
+   0.09    0.09 v _4149_/Q (DFFR_X1)
+   0.01    0.10 ^ _3161_/ZN (NAND2_X1)
+   0.01    0.11 v _3164_/ZN (NAND2_X1)
+   0.00    0.11 v _4149_/D (DFFR_X1)
+           0.11   data arrival time
+
+   0.00    0.00   clock CLK (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00   clock reconvergence pessimism
+           0.00 ^ _4149_/CK (DFFR_X1)
+   0.00    0.00   library hold time
+           0.00   data required time
+---------------------------------------------------------
+           0.00   data required time
+          -0.11   data arrival time
+---------------------------------------------------------
+           0.11   slack (MET)
+
+
+wns max 0.00
+tns max 0.00
+% 
